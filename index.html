@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/serif.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Storybooking</h1>
+					<h3>Ou comment écrire de meilleurs composants</h3>
+					<p>
+						<small><a href="http://twitter.com/kalu_theo">Théophile Kalumbu</a> / <a href="http://twitter.com/ouicar">@ouicar</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>C'est quoi un composant ?</h2>
+					<q class="fragment fade-up">
+						"Un composant est un élément de base d'un ensemble plus complexe (structuré ou composite), lequel est un assemblage de composants souvent différents."
+						Wikipédia
+					</q>
+				</section>
+				<section>
+					<h3>Des composants historiques</h3>
+					<q class="fragment fade-up">
+						<img src="/images/ua_component_panel.png"/>
+					</q>
+				</section>
+				<section>
+					<h3>Des composants un peu plus complexes</h3>
+					<q class="fragment fade-up">
+						<img src="/images/ui_kit_rainyseason_800x600.png" height="500"/>
+					</q>
+				</section>
+				<section>
+					<section>
+						<h2>Et si on créait un super composant ?</h2>
+					</section>
+					<section>
+						<h3>Quoi ? </h3>
+						<p>Un petit formulaire d'inscription facile :-)</p>
+					</section>
+					<section>
+						<img src="/images/final-registration-form.gif" />
+					</section>
+					<section>
+						<h3>Ah... J'ai oublié quelques détails :-)</h3>
+						<ul>
+							<li class="fragment fade-up">Le formulaire n'est accéssible que pour les utilisateurs non-identifiés</li>
+							<li class="fragment fade-up">Une soumis, un message de confirmation apparait</li>
+							<li class="fragment fade-up">Il disparait au bout de 5 secondes</li>
+							<li class="fragment fade-up">L'utilisateur est ensuite automatiquement connecté et redirigé vers une home</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Euhh... et comment je test tout ça pendant que je développe ?</h3>
+						<ul>
+							<li class="fragment fade-up">Je me déconnecte si je suis déjà connecté</li>
+							<li class="fragment fade-up">Je rempli le formulaire... et forcement je me trompe</li>
+							<li class="fragment fade-up">Je rafraichi la page... ah mince j'ai perdu tout ce que j'avais écrit</li>
+							<li class="fragment fade-up">Bon je recommence, je fini de remplir le formulaire</li>
+							<li class="fragment fade-up">J'aperçois le message mais il disparait au bout de 2 secondes</li>
+							<li class="fragment fade-up">Mince ! il y'a une faute de frappe</li>
+							<li class="fragment fade-up">Ah ben je recommence tout et puis j'enleve vite ce timeout de 2 seconde je met 999999 secondes comme ça je suis tranquille... </li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h3>Non mais tu es sérieux ?</h3>
+					<img src="/images/no-way.gif" />
+				</section>
+
+				<section>
+					<h3>"React StoryBook" à la rescousse !!</h3>
+					<img src="/images/200-super-dog.gif" />
+					<br/>
+					<a href="https://getstorybook.io/" target="_blank">getstorybook.io</a>
+				</section>
+
+				<section>
+					<h3>C'est quoi ?</h3>
+					<p class="fragment fade-up">Un outil qui permet d'isoler les composants d'interface de manière à pouvoir les tester plus facilement. </p>
+				</section>
+
+				<section>
+					<h3>Plusieurs avantages</h3>
+					<ul>
+						<li class="fragment fade-up">Accélère le développement front en facilitant les tests</li>
+						<li class="fragment fade-up">Améliore la qualité du code en nous obligeant à découpler nos composants</li>
+						<li class="fragment fade-up">Offre une documentation claire et solide</li>
+						<li class="fragment fade-up">Facilite la communication avec les Designer et les QA</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Comment ça marche ?</h3>
+					<li class="fragment fade-up">React Storybook se lance sur un serveur externe a côté de votre application (Port 9001)</li>
+					<li class="fragment fade-up">On Crée des "stories" à partir du code source de notre projet</li>
+					<li class="fragment fade-up">On indique à React Storybook où trouver les "stories" de manière à pouvoir les exploiter</li>
+				</section>
+
+
+				<section>
+					<h3>Qu'est ce qu'une "story"</h3>
+					<li class="fragment fade-up">Représente un état figé d'un composant  (exemple: "loading", "loaded", "success"...)</li>
+					<li class="fragment fade-up">Techniquement c'est juste une fonction qui renvoi un ReactElement</li>
+				</section>
+
+				<section>
+					<h3>Webpack Hot Module Replacement</h3>
+					<ul>
+						<img src="/images/webpack-overview-diagram.png"/>
+					</ul>
+					<small>Cette technologie permet de mettre à jour le code javascript sans recharger la page</small>
+				</section>
+
+				<section>
+					<h3>La démo !</h3>
+					<a href="http://localhost:9001" target="_blank">ça se passe ici</a>
+				</section>
+
+
+				<section>
+					<h2>Merci</h2>
+					<small>Et surtout écrivez de belles histoires :-)</small>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			//http://andrewhfarmer.com/understanding-hmr/
+		</script>
+	</body>
+</html>
