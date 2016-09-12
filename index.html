@@ -34,10 +34,11 @@
 				<section>
 					<h2>C'est quoi un composant ?</h2>
 					<q class="fragment fade-up">
-						"Un composant est un élément de base d'un ensemble plus complexe (structuré ou composite), lequel est un assemblage de composants souvent différents."
+						"Un composant est un élément de base d'un <b>ensemble plus complexe</b> (structuré ou composite), lequel est un <b>assemblage</b> de composants souvent <b>différents</b>."
 						Wikipédia
 					</q>
 				</section>
+
 				<section>
 					<h3>Des composants historiques</h3>
 					<q class="fragment fade-up">
@@ -64,20 +65,20 @@
 					<section>
 						<h3>Ah... J'ai oublié quelques détails :-)</h3>
 						<ul>
-							<li class="fragment fade-up">Le formulaire n'est accéssible que pour les utilisateurs non-identifiés</li>
-							<li class="fragment fade-up">Une soumis, un message de confirmation apparait</li>
+							<li class="fragment fade-up">Le formulaire est exclusivement réservé aux utilisateurs non-identifiés</li>
+							<li class="fragment fade-up">Après soumission, un message de confirmation apparait</li>
 							<li class="fragment fade-up">Il disparait au bout de 5 secondes</li>
-							<li class="fragment fade-up">L'utilisateur est ensuite automatiquement connecté et redirigé vers une home</li>
+							<li class="fragment fade-up">L'utilisateur est ensuite automatiquement connecté et redirigé vers une page d'accueil</li>
 						</ul>
 					</section>
 
 					<section>
-						<h3>Euhh... et comment je test tout ça pendant que je développe ?</h3>
+						<h3>Euhh... et comment je teste tout ça pendant que je développe ?</h3>
 						<ul>
 							<li class="fragment fade-up">Je me déconnecte si je suis déjà connecté</li>
-							<li class="fragment fade-up">Je rempli le formulaire... et forcement je me trompe</li>
-							<li class="fragment fade-up">Je rafraichi la page... ah mince j'ai perdu tout ce que j'avais écrit</li>
-							<li class="fragment fade-up">Bon je recommence, je fini de remplir le formulaire</li>
+							<li class="fragment fade-up">Je rempli le formulaire... (on suppose qu'il est long donc c'est fastidieux)</li>
+							<li class="fragment fade-up">Je rafraichi la page pour vérifier une modif... ah mince j'ai perdu tout ce que j'avais écrit</li>
+							<li class="fragment fade-up">Bon je recommence, je soumet le formulaire</li>
 							<li class="fragment fade-up">J'aperçois le message mais il disparait au bout de 2 secondes</li>
 							<li class="fragment fade-up">Mince ! il y'a une faute de frappe</li>
 							<li class="fragment fade-up">Ah ben je recommence tout et puis j'enleve vite ce timeout de 2 seconde je met 999999 secondes comme ça je suis tranquille... </li>
@@ -114,7 +115,7 @@
 
 				<section>
 					<h3>Comment ça marche ?</h3>
-					<li class="fragment fade-up">React Storybook se lance sur un serveur externe a côté de votre application (Port 9001)</li>
+					<li class="fragment fade-up">React Storybook se lance sur une url dédiée (Port 9001)</li>
 					<li class="fragment fade-up">On Crée des "stories" à partir du code source de notre projet</li>
 					<li class="fragment fade-up">On indique à React Storybook où trouver les "stories" de manière à pouvoir les exploiter</li>
 				</section>
@@ -139,7 +140,15 @@
 					<a href="http://localhost:9001" target="_blank">ça se passe ici</a>
 				</section>
 
-
+				<section>
+					<h2>Quelques liens</h2>
+					<ul>
+						<li><a href="http://andrewhfarmer.com/understanding-hmr/">Understanding Webpack HMR</a></li>
+						<li><a href="https://github.com/kadirahq/react-storybook">React StoryBook (github)</a></li>
+						<li><a href="https://voice.kadira.io/introducing-react-storybook-ec27f28de1e2#.b1sf2ni34">Introducing React Storybook</a></li>
+						<li><a href="https://ouicar.github.io/2016/08/28/storybook.html">Better UI Components with the Storybook (blog ouicar)</a></li>
+					</ul>
+				</section>
 				<section>
 					<h2>Merci</h2>
 					<small>Et surtout écrivez de belles histoires :-)</small>
